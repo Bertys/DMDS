@@ -1,0 +1,174 @@
+.card-example {
+  .md-subhead {
+    .md-icon {
+      $size: 16px;
+
+      width: $size;
+      min-width: $size;
+      height: $size;
+      min-height: $size;
+      font-size: $size;
+      line-height: $size;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .card-reservation {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .md-icon {
+      margin: 8px;
+      color: rgba(#000, .54) !important;
+    }
+
+    .md-button {
+      border-radius: 2px !important;
+    }
+  }
+}
+
+/**/
+/**/
+.flex-container {
+    display: -webkit-flex;
+    display: flex !important;
+/*    width: 400px;*/
+/*    height: 250px;*/
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+.tarta1{
+    background-color: blue;
+    -webkit-flex: 3;
+    flex: 4;
+}
+.tarta2{
+    background-color: blue;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.tarta3{
+    background-color: blue;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.tarta4{
+    background-color: blue;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.tarta5{
+    background-color: blue;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+
+.hidden
+{
+   display: none
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+/*
+    background: rgba( 255, 255, 255, .8 )
+                url('/img/ajax-loader.gif')
+                50% 50%
+                no-repeat;
+*/
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+#loading {
+    -webkit-animation: rotation 2s infinite linear;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+
+
+.md-dialog-title {
+    text-align: center !important;
+}
+
+
+#passwordPwd {
+    width:      100%;
+}
+
+
+
+.liCamp {
+    text-align: left;
+    display: block;
+/*    margin-bottom: 10px;*/
+    background-color: transparent;
+    color:black;
+    border: 1px dotted grey;
+}
+.headerCamp {
+    width: 60%;
+    text-align: center;
+    min-height: 0;
+}
+.center {
+    margin: 5% 30% 0 30%;
+    width: 40%;
+    border: 1px dotted grey;
+    border-radius: 50px;
+}
+.liCamp>div {
+    text-align: center !important;
+    display: block !important;
+/*    border: 1px dotted grey;*/
+    align-content: center;
+/*    padding: 5px;*/
+    line-height: 1em;
+/*    box-shadow: 2px 2px grey;*/
+}
+#tituloPage{
+    color: black;
+    text-align: center;
+    line-height: 0;
+    margin: 5% 5%;
+}

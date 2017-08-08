@@ -1,0 +1,453 @@
+#h2p3{
+    color: black;
+}
+#anavMailer{
+    color: #73b4f9;
+}
+
+#secLev{
+ background-color: transparent !important;
+    border: 0 !important;
+}
+
+#langCh{
+    background-color: transparent !important;
+    border: 0px !important;
+}
+
+
+.liMinesS{
+    padding:1em;
+    float:left;
+}
+
+
+.inBl{
+    display: inline-block;
+    margin-top:0;
+    border: 2px solid #efa824;
+    border-radius: 10px;
+    padding: 0.8em !important;
+}
+
+.butMine{
+
+	background-color: #662d91 !important;
+	color: #fff;
+    border-color: #000;
+    border-style: solid;
+    border-width: 0.5px 0.5px 0.5px 0.5px;
+    border-radius: 25px;
+    
+}
+
+#h2p1 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none;
+}
+#h2p2 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none;
+}
+#h2p3 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none;
+/*    padding-left: 5px;*/
+}
+#h2p4 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none;
+/*    padding-left: 5px;*/
+    line-height: 1em !important;
+}
+.nested-searchbox3 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: right;
+    position: relative;
+    top: 18px;
+    padding:0;
+}
+.nested-searchbox2 {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: right;
+    position: relative;
+/*    top: 30px;*/
+}
+#numRegCamp{
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: right;
+}
+#numRegEnv{
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: right;
+}
+#nombreCampanas {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: left;
+    padding: 0;
+}
+#nombreEnvios {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: left;
+    padding: 0 !important;
+}
+#nombreViewer {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none !important;
+    padding: 0 !important;
+/*    padding-left: 5px;*/
+}
+#nombrePerfil {
+/*    align-content: center;*/
+    text-align: left;
+/*    display: inline-block;*/
+    float: none !important;
+    padding: 0 !important;
+/*    padding-left: 5px;*/
+    line-height: 0.8em !important;
+    top: 3px;
+}
+
+#search_filter2 {
+/*    align-content: center;*/
+/*    text-align: left;*/
+    display: inline-block;
+    float: right;
+    padding: 0;
+    width: inherit;
+}
+.form-mine{
+    border-color: #000;
+    border-style: solid;
+    border-width: 0.5px 0.5px 0.5px 0.5px;
+/*    border-radius: 25px;*/
+    margin-bottom: 0px;
+}
+
+
+#butLogin{
+
+	background: #662d91;
+	color: #fff;
+    border-color: black;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}
+.form-pretop{
+    border-color: #fff;
+    border-style: solid;
+    border-width: 4px 2px 1px 2px;
+    border-radius: 25px;
+    margin-bottom: 0px;
+}
+.liMailer { 
+ float:right; 
+}
+.loginbody { 
+ background-color: #fff;
+}
+#titulin{
+    margin: 0;
+}
+
+#bPerf{
+    margin: 0;
+}
+
+.pepito{
+    height: 77px;
+}
+.pepito h1{
+    padding: 0.3em 0 0 0 !important;
+}
+#orderByCamp{
+    width: auto;
+    float: right;
+}
+#orderByEnv{
+    width: inherit;
+    float: right;
+}
+.order-asc-desc{
+width: inherit;
+    float: right;
+    text-align: right;
+    align-content: center;
+}
+.width50 {
+    width: 40%;
+    align-content: center;
+/*    text-align: center;*/
+}
+.width40 {
+    list-style-type: none;
+    width: 40%;
+    text-align: center;
+}
+.width20 {
+    width: 20%;
+/*    text-align: center;*/
+}
+.selectsM {
+        margin: auto;
+    width: 30%;
+    border: 2px solid black;
+/*    padding: 10px;*/
+    background-color: #73b4f9;
+    text-align: center;
+    display: block !important;
+}
+.formM {
+        margin: auto;
+    width: 50%;
+    align-content: center;
+    text-align: center;
+/*    display: block !important;*/
+}
+.inputMine {
+    width: 33.33%;
+    text-align: center;
+    border: 1px solid grey;
+}
+#pswrepeat {
+/*    align-content: center;*/
+    text-align: center;
+    width: 60%;
+}
+.goBack {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    background-color: coral;
+    text-align: center;
+}
+#changePsw{
+    margin: auto;
+    width: 40%;
+    border: 2px solid black;
+/*    padding: 10px;*/
+    background-color: #73b4f9;
+    text-align: center;
+}
+#changeAQ{
+    margin: auto;
+    width: 30%;
+    border: 2px solid black;
+/*    padding: 10px;*/
+    background-color: #73b4f9;
+    text-align: center;
+    display: block !important;
+}
+.centered { 
+ position: fixed;  
+ top: 50%;  
+ left: 50%;  
+ margin-top: -50px;  
+ margin-left: 100px;
+}
+/*
+
+     #myListM ul {
+  width: 900px;
+}
+#myListM li {
+width: 75px;
+height: 75px;
+margin-top: 10px;
+margin-right: 10px;
+display: inline-block;
+}
+*/
+
+
+.floatL {
+    float: left;
+    
+/*    display: inline;*/
+/*
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;  
+*/
+}
+.floatR {
+    float: right;
+/*    display: inline;*/
+/*
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;  
+*/
+}
+/*+++++++++++++++++++++++++++++++++++*/
+
+.floating-box {
+    float: left;
+    color:#3498db;
+/*
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;  
+*/
+}
+
+.after-box {
+    clear: left;
+/*    border: 3px solid red;      */
+}
+.your-class::-webkit-input-placeholder {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    color: #b2cde0;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBarOR, #myBarCTR {
+  width: 0%;
+  height: 30px;
+  background-color: #efa824;
+  text-align: center;
+  line-height: 30px;
+  color: black;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+/*
+    background: rgba( 255, 255, 255, .8 )
+                url('/img/ajax-loader.gif')
+                50% 50%
+                no-repeat;
+*/
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+.not-active {
+   pointer-events: none;
+   cursor: default;
+    display: none !important;
+}
+.contaMio{
+  border-style: dotted;
+    border-width: 2px;
+    border-color: grey;
+    border-radius: 12px;
+}
+.navWiz{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+
+
+.form-top {
+     overflow: hidden;
+     padding: 20px 0 20px 0;
+     background: #fff;
+     -moz-border-radius: 4px 4px 0 0;
+     -webkit-border-radius: 4px 4px 0 0;
+     border-radius: 20px 20px 0 0;
+     text-align:center;
+ }
+
+.form-top-left {
+     float: left;
+     width: 30%;
+     padding-top: 25px;
+ }
+
+.form-top-right {
+     float: right;
+     width: 70%;
+     padding-top: 5px;
+     font-size: 66px;
+     color: #fff;
+     text-align: right;
+ }
+
+.login h3 {
+     font-size: 16px;
+     font-weight: 300;
+     color: #ccc;
+     line-height: 30px;
+     text-align:center;
+ }
+
+
+.form-bottom {
+     padding: 25px 25px 30px 25px;
+     background: #fff;
+     -moz-border-radius: 0 0 4px 4px;
+     -webkit-border-radius: 0 0 4px 4px;
+     border-radius: 0 0 4px 4px;
+     text-align: left;
+ }
+.form-group {
+     margin-bottom: 15px;
+ }
+.form-bottom form .btn {
+     width: 100%;
+ }

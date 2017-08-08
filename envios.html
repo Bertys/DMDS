@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="./js/vue.min.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/Wizardy.js?version=3"></script>
+<!--    <script src="js/languages.js?version=3"></script>-->
+<!--    <script src="js/index.js?version=22"></script>-->
+    
+    <script src="js/core-min.js"></script>
+    <script src="js/sha256-min.js"></script>
+    
+<!--
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+-->
+    
+      <script src="./js/vue-material.js"></script>
+    
+    
+      
+</head>
+    
+<body id="b2" class="hidden">
+<div class="app-viewport" id="file-list">
+  
+    <md-sidenav class="md-left md-fixed" ref="sidebar">
+    <md-toolbar class="md-account-header">
+      <md-list class="md-transparent">
+        <md-list-item class="md-avatar-list">
+          <md-avatar class="md-large">
+            <img src="https://placeimg.com/64/64/people/8" alt="People">
+          </md-avatar>
+  
+          <span style="flex: 1"></span>
+        </md-list-item>
+  
+        <md-list-item>
+          <div class="md-list-text-container">
+            <span>Hugo Planisys</span>
+            <span id="userName">johndoe@email.com</span>
+          </div>
+  
+          <md-button class="md-icon-button md-list-action">
+            <md-icon id="buthover">exit_to_app</md-icon>
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-toolbar>
+  
+    <md-list>
+      <md-list-item @click="goCampanas()">
+        <md-icon>insert_drive_file</md-icon> <span>Campanas</span>
+      </md-list-item>
+  
+
+      <md-list-item @click="$refs.sidebar.toggle()" class="md-primary">
+        <md-icon>insert_drive_file</md-icon> <span>Envios</span>
+      </md-list-item>
+  <!--
+      <md-list-item @click="$refs.sidebar.toggle()">
+        <md-icon>insert_drive_file</md-icon> <span>Detalles</span>
+      </md-list-item>
+  
+-->
+      <md-list-item @click="goPerfil()">
+        <md-icon>people</md-icon> <span>Perfil</span>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  
+  <md-whiteframe md-elevation="3" class="main-toolbar">
+    <md-toolbar class="md-large" style="min-height: initial;">
+      <div class="md-toolbar-container">
+        <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
+          <md-icon>menu</md-icon>
+        </md-button>
+        
+          <h2 class="md-title headerCamp">Empresa: PLANISYS Production</h2>
+          
+          
+        <span style="flex: 1"></span>
+  
+        <md-button class="md-icon-button">
+          <md-icon>search</md-icon>
+        </md-button>
+  
+        <md-button class="md-icon-button">
+          <md-icon>view_module</md-icon>
+        </md-button>
+      </div>
+<!--
+        <md-button class="md-fab md-mini">
+          <md-icon>add</md-icon>
+        </md-button>
+-->
+    </md-toolbar>
+  </md-whiteframe>
+    
+    
+  <h5 class="md-title" id="h2p2" style="color: #000;">Lista de Envios</h5>
+  <main class="main-content">
+      
+       
+      <md-list-item class="liCamp" v-for="(data, index) in listEnvTot">
+   Totales: ...
+  </md-list-item>
+      <md-list-item class="liCamp" v-for="(data, index) in listEnv" @click='gotoDetalles(data.info.id,data.info.id)'>
+          <md-button class="md-dense" @click='gotoDetalles(data.info.id,data.info.id)'>{{ data.info.envio.nombre }}</md-button>
+  </md-list-item>
+      
+      
+      <md-button id="butCarMasE" class="md-primary center" v-on:click="cargarMasE()">Cargar Mas</md-button>
+  
+    <div class="modal">
+              <img id="loading" src="./img/logo.png" alt="Planisys DMDS">
+          </div>
+    </main>
+</div>
+    
+    <link rel="stylesheet" href="./css/vue-material.css">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/estilosCampanas.css">
+    
+    
+    <script src="./js/vue.js"></script>
+   
+<!--    <script src="./js/Wizardy.js"></script>-->
+    
+     <script src="./js/main.js"></script>
+     <script src="./js/envios.js"></script>
+    <script src="./js/listeners.js"></script>
+
+     
+    
+</body>
+</html>

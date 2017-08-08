@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="./js/vue.min.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="./js/Wizardy.js?version=3"></script>
+<!--    <script src="js/languages.js?version=3"></script>-->
+<!--    <script src="js/index.js?version=22"></script>-->
+    <link rel="stylesheet" href="css/pwdmeter.css">
+      <script src="js/pwdmeter.js"></script>
+    
+<!--
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+-->
+    
+      <script src="./js/vue-material.js"></script>
+      
+    
+    
+      
+</head>
+    
+<body id="b4" class="hidden">
+<div class="app-viewport" id="file-list">
+  
+    <md-sidenav class="md-left md-fixed" ref="sidebar">
+    <md-toolbar class="md-account-header">
+      <md-list class="md-transparent">
+        <md-list-item class="md-avatar-list">
+          <md-avatar class="md-large">
+            <img src="https://placeimg.com/64/64/people/8" alt="People">
+          </md-avatar>
+  
+          <span style="flex: 1"></span>
+        </md-list-item>
+  
+        <md-list-item>
+          <div class="md-list-text-container">
+            <span>Hugo Planisys</span>
+            <span id="userName">johndoe@email.com</span>
+          </div>
+  
+          <md-button class="md-icon-button md-list-action">
+            <md-icon id="buthover">exit_to_app</md-icon>
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-toolbar>
+  
+    <md-list>
+      <md-list-item @click="goCampanas()" class="md-primary">
+        <md-icon>insert_drive_file</md-icon> <span>Campanas</span>
+      </md-list-item>
+  
+
+      <md-list-item @click="goEnvios()">
+        <md-icon>insert_drive_file</md-icon> <span>Envios</span>
+      </md-list-item>
+
+      <md-list-item @click="goDetalles()">
+        <md-icon>insert_drive_file</md-icon> <span>Detalles</span>
+      </md-list-item>
+
+      <md-list-item @click="$refs.sidebar.toggle()">
+        <md-icon>people</md-icon> <span>Perfil</span>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  
+  <md-whiteframe md-elevation="3" class="main-toolbar">
+    <md-toolbar class="md-large" style="min-height: initial;">
+      <div class="md-toolbar-container">
+        <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
+          <md-icon>menu</md-icon>
+        </md-button>
+        
+          <h2 class="md-title headerCamp">Empresa: PLANISYS Production</h2>
+          
+          
+        <span style="flex: 1"></span>
+  
+      </div>
+<!--
+        <md-button class="md-fab md-mini">
+          <md-icon>add</md-icon>
+        </md-button>
+-->
+    </md-toolbar>
+  </md-whiteframe>
+    
+    
+  <h5 class="md-title" id="tituloPage">Vista del Perfil</h5>
+  <main class="main-content">
+   <md-tabs md-fixed>
+  <md-tab id="passwordM" md-label="Password" md-active>
+    
+      <div id="content">
+            <form id="formPassword" name="formPassword">
+            <table id="tablePwdCheck" cellpadding="5" cellspacing="1" border="0">
+              <tbody><tr>
+                  <th colspan="2" class="txtCenter" id="tst">Test Your Password</th>
+<!--                    <th class="txtCenter" id="txtCenter">Minimum Requirements</th>-->
+               </tr>
+                
+                <tr>
+                    <th>Score:</th>
+                    <td>
+                        <div id="scorebarBorder">
+                        <div id="score">0%</div>
+                        <div id="scorebar" style="background-position: 0px center;">&nbsp;</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th id="complex">Complexity:</th>
+                    <td><div id="complexity">Too Short</div></td>
+                </tr>
+                <tr>  
+                  <th id="hide">Hide:</th>
+                    <td><input type="checkbox" id="mask" name="mask" value="1" checked="checked" onclick="togPwdMask();"></td>
+                 </tr> 
+                  <tr>
+                    <th  id="psw">Password:</th>
+                    <td>
+                        <input type="password" id="passwordPwd" name="passwordPwd" autocomplete="off" onkeyup="chkPass(this.value);" class="">
+                        <input type="text" id="passwordTxt" name="passwordTxt" autocomplete="off" onkeyup="chkPass(this.value);" class="hide">
+                    </td>
+                </tr>
+            </tbody></table>
+                
+       </form>
+    <div class="xtend">&nbsp;</div>
+  </div>
+         <form class="formM" id="formulario903"><input type="text" id="pswrepeat" class="inputMine your-class" placeholder="Repeat Psw" style="display: inline-block;"><input type="button" class="btn btn-info" value="Change Password" id="changePsw" style="display: inline-block;"></form>
+  </md-tab>
+  <md-tab id="secrets" md-label="Secrets">
+    <form class="form-inline" id="formulario9903"><input type="text" id="pregSec" class="inputMine your-class centeredM" placeholder="Pregunta secreta"><input type="text" id="resSec" class="inputMine your-class centeredM" placeholder="Respuesta secreta"><input type="text" id="emailAlt" class="inputMine your-class centeredM" placeholder="Email Alternativo"><input type="button" class="btn btn-info" value="Cambiar Secretos" id="changeAQ"></form> 
+  </md-tab>
+
+  <md-tab id="security" md-label="Security">
+    <div class="security-level selectsM">  
+                <select id="secLev">
+                    <option id="opti900" selected disabled>Nivel de Seguridad</option> 
+                    <option id="opti901" value="Basic">Simple ()</option>
+                    <option id="opti902" value="Medium">2 vias (Sms)</option>
+                    <option id="opti903" value="High">2 vias (Token)</option>
+                </select>
+            </div> 
+  </md-tab>
+       <md-tab id="language" md-label="Language">
+    <div class="language-choose selectsM">  
+                <select id="langCh">
+                    <option id="opti800" selected disabled>Lenguaje preferido</option> 
+                    <option id="opti801" value="en">Inglés (En)</option>
+                    <option id="opti802" value="es">Español (Es)</option>
+                    <option id="opti803" value="fr">Francés (Fr)</option>
+                    <option id="opti804" value="ca">Catalán (Ca)</option>
+                </select>
+            </div> 
+  </md-tab>
+</md-tabs>
+
+          
+        <div class="modal">
+              <img id="loading" src="./img/logo.png" alt="Planisys DMDS">
+          </div>
+      
+
+      
+  </main>
+</div>
+    
+    <link rel="stylesheet" href="./css/vue-material.css">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/estilosCampanas.css">
+    <link rel="stylesheet" href="./css/estilosPerfil.css">
+     <link rel="stylesheet" href="./css/estilos.css">
+    
+
+    
+    
+    <script src="./js/vue.js"></script>
+    
+   
+<!--    <script src="./js/Wizardy.js"></script>-->
+    
+     <script src="./js/main.js"></script>
+     <script src="./js/perfil.js"></script>
+     <script src="./js/listeners.js"></script>
+
+     
+    
+</body>
+</html>
