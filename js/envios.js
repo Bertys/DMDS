@@ -16,7 +16,8 @@ var contEnvMost=1;
 
 
 $(document).ready(function() {
-    $("#b2").removeClass("hidden");
+    $("#stats").removeClass("hidden");
+    $("#envios").removeClass("hidden");
     
     $body = $("body");
         $(document).on({
@@ -27,22 +28,28 @@ $(document).ready(function() {
     loadWizzard();
     myPag=2;
 
-    c=getCookie('userEmail');
-    x=getCookie('token');
-    z=getCookie('idGroupSel');
-    a=getCookie('idDmDsSel');
-    b=getCookie('campanaId');
-    cookie=getCookie('wizzard_save');
-    d=getCookie('nameDmDsSel');
-    e=getCookie('nameGroupSel');
-    f=getCookie('campanaName');
-    language=getCookie('language');
+    
+    x=localStorage.getItem("token");
+    c=localStorage.getItem("userEmail");
+    permissions=localStorage.getItem("permissions");
+    language=localStorage.getItem("language");
+    
+    a=localStorage.getItem("idDmDsSel");
+    z=localStorage.getItem("idGroupSel");
+    
+    
+    b=localStorage.getItem("campanaId");
+    d=localStorage.getItem("nameDmDsSel");
+    e=localStorage.getItem("nameGroupSel");
+    f=localStorage.getItem("campanaName");
+
 
 
 
 
     $('#userName').html(c);
-    $('#h2p2').html("<br />Lista de envios de: '"+f+"'");
+//    $('#h2p2').html("<br />Lista de envios de: '"+f+"'");
+    $('#h2p2').html("Campaña: "+f);
 
       startEnvios();
 //      enviosMostrados();
@@ -52,7 +59,9 @@ $(document).ready(function() {
         location.reload();
         }
       }
-      
+      $('#anavCampanas').click(function(e) {
+      location.replace('./campanas.html');
+        });
 });
 ////////FIN DEL DOCUMENT READY/////////////////////////////////////
 
@@ -91,7 +100,9 @@ document.getElementById("logout2").addEventListener("click", function(){
 $('#goBack2').click(function(e) {
     window.history.back();
         });
-
+$('#goBack').click(function(e) {
+    location.replace('./campanas.html');
+        });
     
     
     
@@ -164,6 +175,11 @@ function searchEnvios(){
 
     var str = $('.input-searchbox').val();
 
+     
+    for(i=0;i<=wiz.envios.length;i++){
+            envios.shift();
+        }
+//    alert(str);
     var data={'search':str,'start' : wiz.Perfil[0].info.start, 'length' : wiz.Perfil[0].info.numReg,'order_by' : wiz.Perfil[0].info.Orderby,"order_dir":wiz.Perfil[0].info.orderDir};
     ajx = wiz.postInfo('envios/'+a+'/'+z+'/'+b,data,wiz.processEnvios);
 }
@@ -176,8 +192,9 @@ function gotoDetalles(id,name){
     if(id!=0){
         console.log('id '+id);
         envioId=id;
-        document.cookie = "envioId="+envioId;
-        document.cookie = "envioName="+name;
+        localStorage.envioId=envioId;
+        localStorage.envioName=name;
+
     
     history.pushState({urlPath:'./envios.html'},"page 5",'./detalles.html');
     location.replace('./detalles.html');
@@ -210,7 +227,7 @@ function printEnvios(pag){
             envios.push(wiz.envios[i]);
         }
     if(wiz.envios.length==0){
-        envios.push({info:{envio:{nombre:"La campaña seleccionada no tiene envíos."},id:0}})
+        envios.push({info:{envio:{nombre:"El envío seleccionado no tiene correos."},id:0}})
         document.getElementById('butCarMasE').setAttribute('disabled', true);
     }
 	}
@@ -224,4 +241,24 @@ function printEnvios(pag){
     if(totalEnvios<=6){
         document.getElementById('butCarMasE').setAttribute('disabled', true);
     }
+}
+
+
+///////////////WIZARD////////////////
+function loadWizzard(){
+//	var str = readCookie('wizzard_save');
+	var str;
+	if(str != undefined && str.length>2){
+		var js = JSON.parse(str);
+		wiz = new WizzardDMDS(js);
+	} else{
+		wiz = new WizzardDMDS();
+	}
+	if(typeof afterLoad !== "undefined") afterLoad();
+	afterLoad = undefined;
+    //console.log("afterloadwizard");
+}
+
+function printPerfil(){
+    console.log(wiz.Perfil);
 }

@@ -1,29 +1,28 @@
 //////
+var search=0;
 var contCampMost=1;
 //$(document).ready(function() {
 function inicioCampanas(){
  loadWizzard();
     myPag=1;
-        
-    x=getCookie('token');
-    b=getCookie('userEmail');
-      permissions=getCookie('permissions');
-//    y=getCookie('nameGroupSel');
-//    z=getCookie('idGroupSel');
-//    a=getCookie('idDmDsSel');
-//    c=getCookie('nameDmDsSel');
-   language=getCookie('language');
-      
-        
+    
+    
+    x=localStorage.getItem("token");
+    b=localStorage.getItem("userEmail");
+    permissions=localStorage.getItem("permissions");
+    language=localStorage.getItem("language");
+    
+
       z=28;
       a=14;
       y='Default';
       c='PLANISYS Production';
         
-        document.cookie = "idDmDsSel="+a;
-        document.cookie = "nameDmDsSel="+c;
-        document.cookie = "idGroupSel="+z;
-        document.cookie = "nameGroupSel="+y;
+    localStorage.idDmDsSel = a;
+    localStorage.nameDmDsSel = c;
+    localStorage.idGroupSel = z;
+    localStorage.nameGroupSel = y;
+
     
 //    console.log(b);
     $('#userName').html(b);
@@ -38,13 +37,21 @@ function gotoEnvios2(id,name){
     
         console.log('id '+id);
         campanaId=id;
-        document.cookie = "campanaId="+campanaId;
-        document.cookie = "campanaName="+name;
+        localStorage.campanaId=campanaId;
+        localStorage.campanaName=name;
     
     history.pushState({urlPath:'./envios.html'},"page 4",'./envios.html');
     location.replace('./envios.html');
 }
-
+function gotoStats2(id,name){
+    
+        console.log('id '+id);
+        campanaId=id;
+        localStorage.campanaId=campanaId;
+        localStorage.campanaName=name;
+    
+    location.replace('./stats.html');
+}
 
 function cargarMas(){
     var ajx;
@@ -53,7 +60,7 @@ function cargarMas(){
     var obj={'userEmail': b,'token': x,'language':language,'numReg':6,'Orderby':'id','orderDir':'asc','start':aux,'pagina':0};
     wiz.processPerfil(obj);
 
-    var data={'start' : wiz.Perfil[0].info.start, 'length' : wiz.Perfil[0].info.numReg,'order_by' : wiz.Perfil[0].info.Orderby,"order_dir":wiz.Perfil[0].info.orderDir};
+    var data={'start' : wiz.Perfil[0].info.start, 'length' : wiz.Perfil[0].info.numReg,'order_by' : wiz.Perfil[0].info.Orderby,'order_dir':wiz.Perfil[0].info.orderDir};
     ajx = wiz.postInfo('campanas/'+a+'/'+z,data,wiz.processCampanas);
     contCampMost++;
     }else{
@@ -98,7 +105,37 @@ function printCampanas(pag){
 
 
 
+function changeOrderCamp(){
 
+    var e = document.getElementById("orderByCamp");
+    var tt = e.options[e.selectedIndex].value;
+    wiz.Perfil[0].info.Orderby=tt;
+    var xx=$('#checkboxCamp').checked;
+    if(xx){
+        wiz.Perfil[0].info.orderDir='asc';
+    }else{
+        wiz.Perfil[0].info.orderDir='desc';
+    }
+
+    var data={'start' : wiz.Perfil[0].info.start, 'length' : wiz.Perfil[0].info.numReg,'order_by' : wiz.Perfil[0].info.Orderby,"order_dir":wiz.Perfil[0].info.orderDir};
+    ajx = wiz.postInfo('campanas/'+a+'/'+z,data,wiz.processCampanas);
+}
+
+
+function searchCampanas(){
+
+    var str = $('#inputSearch').val();
+    var obj={'userEmail': b,'token': x,'language':language,'numReg':6,'Orderby':'id','orderDir':'asc','start':0,'pagina':0};
+    wiz.processPerfil(obj);
+    
+    for(i=0;i<=wiz.Campanas.length-1;i++){
+            campanas.shift();
+        }
+    
+//    alert(str);
+    var data={'search':str,'start' : wiz.Perfil[0].info.start, 'length' : wiz.Perfil[0].info.numReg,'order_by' : wiz.Perfil[0].info.Orderby,"order_dir":wiz.Perfil[0].info.orderDir};
+    ajx = wiz.postInfo('campanas/'+a+'/'+z,data,wiz.processCampanas);
+}
 
 
 

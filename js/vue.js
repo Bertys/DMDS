@@ -48,9 +48,6 @@ var example2 = new Vue({
     onClose(type) {
       console.log('Closed', type);
     },
-      gotoEnvios(dmds_remote_id,name) {
-      alert(name);
-    },
       dateFormat(data){
       var mifecha = moment(data).format('DD/MM/YY');  
           return mifecha;

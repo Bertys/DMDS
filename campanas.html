@@ -28,15 +28,13 @@
 
 </head>
     
-<body id="stats" class="hidden">
+<body id="campanas" class="hidden">
 <div class="app-viewport" id="file-list">
     
     <md-whiteframe md-elevation="3" class="main-toolbar">
  
       <md-toolbar class="md-dense">
- <md-button class="md-icon-button" id="anavCampanas">
-    <md-icon>arrow_back</md-icon>
-  </md-button>
+
   <h2 class="md-title headerCamp" style="flex: 1">Campañas</h2>
 
           <div style="flex: 0.25">
@@ -53,7 +51,7 @@
     <md-menu-item>
       <div class="md-list-text-container">
             <span>Hugo Planisys</span>
-            <div id="userName">hugo@planisys.com</div>
+            <div id="userName">johndoe@email.com</div>
           </div>
     </md-menu-item>
       
@@ -74,11 +72,10 @@
       
       
   </md-whiteframe>
-
-    <main class="main-content">
-      
-        
-        <md-card md-with-hover>
+   
+<!--    <h4 class="md-title headerCamp" style="flex: 1">Lista de campañas de lo últimos</h4>-->
+    
+    <md-card md-with-hover>
 <!--
   <md-card-header>
     <div class="md-title" style="flex: 1">1.542.854</div>
@@ -92,45 +89,49 @@
   </md-card-header>
 -->
 
-<div style="display: inline-block">
-<!--    <div class="md-subhead" style="float:left;">Nombre de Campaña</div>-->
-        <div class="md-title" style="float:left;" id="h2p2">Año Nuevo</div>
-
-      
-    <md-button class="md-icon-button" md-menu-trigger style="float:right;">
-        <i class="material-icons">mail_outline</i>
-      </md-button>
-    
-    <md-button class="md-icon-button" md-menu-trigger active style="float:right;">
-        <i class="material-icons">equalizer</i>
-      </md-button>
-
-    </div>
-
-        <md-card-content></md-card-content>
-    </md-card>
-       
-<!--
-      <md-list-item class="liCamp" v-for="(data, index) in listEnvTot">
-   Totales: ...
-  </md-list-item>
-      <md-list-item class="liCamp" v-for="(data, index) in listEnv" @click='gotoDetalles(data.info.id,data.info.id)'>
-          <md-button class="md-dense" @click='gotoDetalles(data.info.id,data.info.id)'>{{ data.info.envio.nombre }}</md-button>
-  </md-list-item>
-      
-      
-      
--->
-     <md-card class="card-example" style="padding: 0em;" v-for="(data, index) in listEnv"> 
-      <md-card-area md-inset>
 <md-card-header>
     <md-card-header-text>
-      <div class="md-title">{{ data.info.envio.nombre }}</div>
-      <div class="md-subhead">{{ dateFormat(data.info.timestamp) }}</div>
+      <div class="md-title" style="flex: 1">Lista de campañas de lo últimos</div>
     </md-card-header-text>
 
     <md-menu md-size="4" md-direction="bottom left">
       <md-button class="md-icon-button" md-menu-trigger>
+        <md-icon>more_vert</md-icon>
+      </md-button>
+
+      <md-menu-content>
+        <md-menu-item>
+          <span>7 dias</span>
+        </md-menu-item>
+
+        <md-menu-item>
+          <span>30 dias</span>
+        </md-menu-item>
+          <md-menu-item>
+          <span>90 dias</span>
+        </md-menu-item>
+
+        <md-menu-item>
+          <span>365 dias</span>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </md-card-header>
+
+        <md-card-content></md-card-content>
+    </md-card>
+    
+    
+    <md-card class="card-example" style="padding: 0em;" v-for="(data, index) in listCamp">
+  <md-card-area md-inset>
+<md-card-header>
+    <md-card-header-text>
+      <div class="md-title">{{ data.info.name }}</div>
+      <div class="md-subhead">{{ dateFormat(data.info.created_at) }}</div>
+    </md-card-header-text>
+
+    <md-menu md-size="4" md-direction="bottom left">
+      <md-button class="md-icon-button" md-menu-trigger v-on:click="gotoStats2(data.info.dmds_remote_id, data.info.name)" >
         <i class="material-icons">equalizer</i>
       </md-button>
       <md-menu-content>
@@ -138,8 +139,8 @@
     </md-menu>
     
     <md-menu md-size="4" md-direction="bottom left">
-      <md-button class="md-icon-button" md-menu-trigger>
-        <i class="material-icons">info_outline</i>
+      <md-button class="md-icon-button" md-menu-trigger v-on:click="gotoEnvios2(data.info.dmds_remote_id, data.info.name)" >
+        <i class="material-icons">mail_outline</i>
       </md-button>
 
       <md-menu-content>
@@ -154,38 +155,43 @@
        <div style="display:flex; text-align:center;"> 
         
            <div class="" style="flex:1; margin-right:5px; text-align:left; width:20%;">
-        <i class="material-icons">play_arrow</i></div><div> {{ (data.info.ev_envio) }}
-     </div>
-     
-           
-           <div class="" style="flex:1; margin-right:5px;">
-<i class="material-icons">open_in_browser</i></div> <div style="vertical-align: text-top;">{{ (data.info.ev_vista) }}
+        <i class="material-icons">play_arrow</i></div><div> {{ (data.info.stats.emails_enviados) }}
      </div>
            
            <div class="" style="flex:1; margin-right:5px;">
-               
-               <i class="material-icons">touch_app</i> </div><div style="vertical-align: text-top;">{{ (data.info.ev_click) }}
+               <i class="material-icons">mail</i> 
            </div>
+           
+           <div style="vertical-align: text-top;">{{ (data.info.stats.envios_hechos) }}</div>
+           
+           
+           <div class="" style="flex:1; margin-right:5px;">
+<i class="material-icons">open_in_browser</i></div> <div style="vertical-align: text-top;">{{ (data.info.stats.click_rate) }}
+     </div>
+           
            <div class="" style="flex:1; margin-right:5px;">
                
-               <span>OR</span> </div><div style="vertical-align: text-top;">{{ (data.info.ev_OR) }}
-           </div>
-<div class="" style="flex:1; margin-right:5px;">
-               
-                <span>CTR</span> </div><div style="vertical-align: text-top;">{{ (data.info.ev_CTR) }}
+               <i class="material-icons">touch_app</i> </div><div style="vertical-align: text-top;">{{ (data.info.stats.open_rate) }}
            </div>
 </div>
     </md-card-content>
   </md-card-area>
-      </md-card> 
-        
-        <md-button id="butCarMasE" class="md-primary center" v-on:click="cargarMasE()">Cargar Mas</md-button>
-        
-        
-    <div class="modal">
-              <img id="loading" src="./img/logo.png" alt="Planisys DMDS">
+
+<!--
+  <md-card-content>
+    
+  </md-card-content>
+-->
+</md-card> 
+      
+      
+      <md-button id="butCarMas" class="md-primary center" v-on:click="cargarMas()">Cargar Mas</md-button>
+      
+      
+      <div class="modal">
+              <img id="loading" src="img/logo.png" alt="Planisys DMDS">
           </div>
-    </main>
+    
     
     
     <div class="footer">
@@ -199,10 +205,11 @@
     </div>   
     
     <link rel="stylesheet" href="./css/vue-material.css">
-    <link rel="stylesheet" href="./css/envios.css">
+    <link rel="stylesheet" href="./css/campanas.css">
     
     <script src="./js/vue.js"></script>
-    <script src="./js/envios.js"></script>
+    <script src="./js/main.js"></script>
+     <script src="./js/campanas.js"></script>
    
     
 </body>

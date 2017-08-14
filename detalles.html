@@ -31,73 +31,53 @@
 <body id="b3" class="hidden">
 <div class="app-viewport" id="file-list">
   
-    <md-sidenav class="md-left md-fixed" ref="sidebar">
-    <md-toolbar class="md-account-header">
-      <md-list class="md-transparent">
-        <md-list-item class="md-avatar-list">
-          <md-avatar class="md-large">
-            <img src="https://placeimg.com/64/64/people/8" alt="People">
-          </md-avatar>
-  
-          <span style="flex: 1"></span>
-        </md-list-item>
-  
-        <md-list-item>
-          <div class="md-list-text-container">
+    
+  <md-whiteframe md-elevation="3" class="main-toolbar">
+    
+      
+      <md-toolbar class="md-dense">
+          <md-button class="md-icon-button" id="anavEnvios">
+    <md-icon>arrow_back</md-icon>
+  </md-button>
+
+  <h2 class="md-title headerCamp" style="flex: 1">PLANISYS Production</h2>
+
+  <md-menu md-direction="bottom left" md-size="4">
+  <md-button class="md-icon-button" md-menu-trigger>
+    <md-icon>menu</md-icon>
+  </md-button>
+
+  <md-menu-content>
+    <md-menu-item>
+      <div class="md-list-text-container">
             <span>Hugo Planisys</span>
-            <span id="userName">johndoe@email.com</span>
+            <div id="userName">johndoe@email.com</div>
           </div>
-  
-          <md-button class="md-icon-button md-list-action">
+    </md-menu-item>
+      
+      <md-menu-item>
+      <span>Lenguaje</span>
+      <md-icon>near_me</md-icon>
+    </md-menu-item>
+
+    <md-menu-item @click="logout()">
+      <span>Cerrar Sesion</span>
+      <md-button class="md-icon-button md-list-action">
             <md-icon id="buthover">exit_to_app</md-icon>
           </md-button>
-        </md-list-item>
-      </md-list>
-    </md-toolbar>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>
+</md-toolbar>
   
-    <md-list>
-      <md-list-item @click="goCampanas()">
-        <md-icon>insert_drive_file</md-icon> <span>Campanas</span>
-      </md-list-item>
-  
-
-      <md-list-item @click="goEnvios()">
-        <md-icon>insert_drive_file</md-icon> <span>Envios</span>
-      </md-list-item>
-
-      <md-list-item @click="$refs.sidebar.toggle()" class="md-primary">
-        <md-icon>insert_drive_file</md-icon> <span>Detalles</span>
-      </md-list-item>
-
-      <md-list-item @click="goPerfil()">
-        <md-icon>people</md-icon> <span>Perfil</span>
-      </md-list-item>
-    </md-list>
-  </md-sidenav>
-  
-  <md-whiteframe md-elevation="3" class="main-toolbar">
-    <md-toolbar class="md-large" style="min-height: initial;">
-      <div class="md-toolbar-container">
-        <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
-          <md-icon>menu</md-icon>
-        </md-button>
-        
-          <h2 class="md-title headerCamp">Empresa: PLANISYS Production</h2>
-          
-          
-        <span style="flex: 1"></span>
-  
-      </div>
-<!--
-        <md-button class="md-fab md-mini">
-          <md-icon>add</md-icon>
-        </md-button>
--->
-    </md-toolbar>
+   <md-toolbar class="md-dense">
+  <h2 class="md-title" id="h2p3">Envios</h2>
+    
+</md-toolbar>
+      
+      
+      
   </md-whiteframe>
-    
-    
-  <div class="md-title" id="h2p3">Vista de Detalles</div>
   <main class="main-content">
       
        <md-tabs md-fixed>
@@ -146,9 +126,11 @@
 <!--            <div id="container4" style=""></div>-->
   </md-tab>
 
+<!--
   <md-tab id="More" md-label="More">
     <p>Aquí se añadirían más opciones, como la distribución en el mapa, o los graficos de dispositivos y plataformas.</p>
   </md-tab>
+-->
 </md-tabs>
       <div class="modal">
               <img id="loading" src="./img/logo.png" alt="Planisys DMDS">

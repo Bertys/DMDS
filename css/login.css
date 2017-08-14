@@ -1,0 +1,63 @@
+#formLogin{
+    margin: 0;
+/*    background: yellow;*/
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+#butLogin{
+
+	background: rgb(155, 200, 216);
+	color: #fff;
+    border-color: black;
+/*    left: 20%;*/
+    min-width: 100%; 
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
+h3 {
+     font-size: 16px;
+     font-weight: 300;
+     color: #ccc;
+     line-height: 30px;
+     text-align:center;
+ }
+
+
+div.image {
+    height: 10em;
+    position: relative }
+div.image img {
+    margin: 0;
+/*    background: yellow;*/
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+/*  background-color: #efefef;*/
+  text-align: center;
+}

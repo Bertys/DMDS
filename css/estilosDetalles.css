@@ -1,3 +1,22 @@
+#container2{
+    max-width: inherit;
+}
+.highcharts-container{
+    width: auto;
+}
+
+
+.md-tabs-navigation{
+    position: fixed !important; /* Set the navbar to fixed position */
+    /*top: 100px;*/ /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+.md-tabs-content{
+     /* Set the navbar to fixed position */
+    top: 50px; /* Position the navbar at the top of the page */
+    min-height: 440px!important; /* Full width */
+    width: 100%;
+}
 #h2p3{
     color: black;
 }

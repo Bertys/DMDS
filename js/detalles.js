@@ -17,20 +17,28 @@ $(document).ready(function() {
     loadWizzard();
     myPag=3;
 
-    c=getCookie('userEmail');
-    x=getCookie('token');
-    z=getCookie('idGroupSel');
-    a=getCookie('idDmDsSel');
-    b=getCookie('campanaId');
-    d=getCookie('nameDmDsSel');
-    g=getCookie('nameGroupSel');
-    f=getCookie('campanaName');
-    h=getCookie('envioId');
-    o=getCookie('envioName');
+        
+    x=localStorage.getItem("token");
+    c=localStorage.getItem("userEmail");
+    permissions=localStorage.getItem("permissions");
+    language=localStorage.getItem("language");
+    
+    a=localStorage.getItem("idDmDsSel");
+    z=localStorage.getItem("idGroupSel");
+    
+    
+    b=localStorage.getItem("campanaId");
+    d=localStorage.getItem("nameDmDsSel");
+    g=localStorage.getItem("nameGroupSel");
+    f=localStorage.getItem("campanaName");
+    
+    h=localStorage.getItem("envioId");
+    o=localStorage.getItem("envioName");
+
       
-    language=getCookie('language');
-    pagina=getCookie('pagina');
-    numReg=getCookie('numReg');
+
+    pagina=0;
+    numReg=6;
     
 //myScript(language,myPag)
         
@@ -50,7 +58,10 @@ $(document).ready(function() {
         }
       }
 
-      
+    $('#anavEnvios').click(function(e) {
+      history.pushState({urlPath:'./envios.html'},"page 6",'./envios.html');
+      location.replace('./envios.html');
+        });  
 });
 ////////FIN DEL DOCUMENT READY///////////////////////////////
 

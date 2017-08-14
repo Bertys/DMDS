@@ -5,207 +5,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     
     <script src="./js/vue.min.js"></script>
         <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/Wizardy.js?version=3"></script>
-<!--    <script src="js/languages.js?version=3"></script>-->
-<!--    <script src="js/index.js?version=22"></script>-->
+
     
-    <script src="js/core-min.js"></script>
-    <script src="js/sha256-min.js"></script>
-    
-<!--
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
--->
-    
-      <script src="./js/moment-with-locales.js"></script>
-      <script src="./js/vue-material.js"></script>
-    
-    
-      
+
 </head>
     
-<body id="b1" class="hidden">
-<div class="app-viewport" id="file-list">
-  
-    <md-sidenav class="md-left md-fixed" ref="sidebar">
-    <md-toolbar class="md-account-header">
-      <md-list class="md-transparent">
-        <md-list-item class="md-avatar-list">
-          <md-avatar class="md-large">
-            <img src="https://placeimg.com/64/64/people/8" alt="People">
-          </md-avatar>
-  
-          <span style="flex: 1"></span>
-        </md-list-item>
-  
-        <md-list-item>
-          <div class="md-list-text-container">
-            <span>Hugo Planisys</span>
-            <div id="userName">johndoe@email.com</div>
-          </div>
-  
-          <md-button class="md-icon-button md-list-action" @click="logout()">
-            <md-icon id="buthover">exit_to_app</md-icon>
-          </md-button>
-        </md-list-item>
-      </md-list>
-    </md-toolbar>
-  
-    <md-list>
-      <md-list-item @click="$refs.sidebar.toggle()" class="md-primary">
-        <md-icon>insert_drive_file</md-icon> <span>Campanas</span>
-      </md-list-item>
-  
-<!--
-      <md-list-item @click="$refs.sidebar.toggle()">
-        <md-icon>insert_drive_file</md-icon> <span>Envios</span>
-      </md-list-item>
-  
-      <md-list-item @click="$refs.sidebar.toggle()">
-        <md-icon>insert_drive_file</md-icon> <span>Detalles</span>
-      </md-list-item>
-  
--->
-      <md-list-item @click="goPerfil()">
-        <md-icon>people</md-icon> <span>Perfil</span>
-      </md-list-item>
-    </md-list>
-  </md-sidenav>
-  
-  <md-whiteframe md-elevation="3" class="main-toolbar">
-    <md-toolbar class="md-large" style="min-height: initial;">
-      <div class="md-toolbar-container">
-        <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
-          <md-icon>menu</md-icon>
-        </md-button>
-        
-          <h2 class="md-title headerCamp">PLANISYS Production</h2>
-          
-          
-        <span style="flex: 1"></span>
-  
-        <md-button class="md-icon-button">
-          <md-icon>search</md-icon>
-        </md-button>
-  
-        <md-button class="md-icon-button">
-          <md-icon>view_module</md-icon>
-        </md-button>
-      </div>
-<!--
-        <md-button class="md-fab md-mini">
-          <md-icon>add</md-icon>
-        </md-button>
--->
-    </md-toolbar>
-  </md-whiteframe>
+<body>
+    
+    <div class="image"><img src="img/dmdsSS.PNG" alt="DMDS Icon"></div>
+    <div class="footer">DMDS © 2016-2017 Planisys</div>
     
     
-    <md-dialog class="modal1" md-open-from="#modal" md-close-to="#modal" ref="dialog1">
-  <md-dialog-title style="color:#000; padding: 0px;">DMDS VIEWER 1.0.3</md-dialog-title>
-
-  <md-dialog-content>
-      <div class="form-top">
-            <img src="img/login/logo.png" height="30%" width="30%" style="align-content: center;">
-      </div>
-      <div class="form-bottom">
-         <form action="" method="" class="">
-            <div class="form-group">
-                <md-input-container>
-    <label class="sr-only" for="form-username" id="lab1">Correo</label>
-    <md-input text="Username" type="text" name="username" id="user" value="" placeholder="Correo..." class="form-username form-control"></md-input>
-  </md-input-container>
-            </div>
-            <div class="form-group">
-               
-<!--               <input type="password" name="password" id="password" value=""  class="form-password form-control" placeholder="Contrasenya..." onkeypress="return runScript(event)" />-->
-            
-             <md-input-container md-has-password>
-                 <label class="sr-only" for="form-password" id="lab2">Contraseña</label>
-    <md-input type="password" id="password" class="form-password form-control" placeholder="Contrasenya..." onkeypress="return runScript(event)"></md-input>
-  </md-input-container>
-                </div>
-             <br /><label class="" id="helper"></label>
-             
-          </form>
-      </div>
-        </md-dialog-content>
-
-  <md-dialog-actions>
-    <md-button class="md-primary" @click="closeDialog('dialog1')">Cancel</md-button>
-    <md-button id="butLogin" class="md-primary" @click="closeDialog('dialog1')">Ok</md-button>
-  </md-dialog-actions>
-</md-dialog>
-
-
-<!--<md-button class="md-primary md-raised" id="customModal" @click="openDialog('dialog1')">Login</md-button>-->
     
+    <link rel="stylesheet" href="./css/landing.css">
     
-  <h5 class="md-title" id="tituloPage">Campañas</h5>
-  <main class="main-content">
-      
-      
-
-      
-      <md-card class="card-example" style="padding: 1em;" v-for="(data, index) in listCamp">
-  <md-card-area md-inset>
-
-
-    <md-card-content style="display:flex;">
-             <div class="md-list-text-container"  v-on:click="gotoEnvios(data.info.dmds_remote_id, data.info.name)">
-         
-        <span>{{ data.info.name }}</span>
-         <span>Creada: {{ dateFormat(data.info.created_at) }} </span>
-     </div>
-        
-        <div class="" style="float:left; margin-right:5px;">
-        Chart1
-     </div><div class="" style="float:left; margin-right:5px;">
-        Chart2
-     </div><div class="" style="float:left; margin-right:5px;">
-        Chart3
-     </div>
-
-    </md-card-content>
-  </md-card-area>
-
-<!--
-  <md-card-content>
-    
-  </md-card-content>
--->
-</md-card> 
-      
-      
-      <md-button id="butCarMas" class="md-primary center" v-on:click="cargarMas()">Cargar Mas</md-button>
-      
-      
-      <div class="modal">
-              <img id="loading" src="img/logo.png" alt="Planisys DMDS">
-          </div>
-      
-    </main>
-</div>
-    
-    <link rel="stylesheet" href="./css/vue-material.css">
-    
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/estilosCampanas.css">
-    <link rel="stylesheet" href="./css/estilosDetalles.css">
-    
-    
-    <script src="./js/vue.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+     <script src="./js/landing.js"></script>
    
-<!--    <script src="./js/Wizardy.js"></script>-->
-    
-     <script src="./js/main.js"></script>
-     <script src="./js/index.js"></script>
-    
-     <script src="./js/listeners.js"></script>
-     
     
 </body>
 </html>

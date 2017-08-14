@@ -1,0 +1,74 @@
+.md-card .md-card-header{
+    padding: 0;
+}
+.md-list.md-double-line .md-list-item .md-list-item-container{
+    min-height: inherit;
+}
+
+.md-theme-default.md-toolbar{
+    background-color: rgb(43, 143, 249);
+}
+.md-theme-default.md-bottom-bar.md-fixed{
+    background-color: rgb(84, 84, 84);
+}
+.md-theme-default.md-bottom-bar.md-fixed .md-bottom-bar-item{
+    color:white;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+/*  padding: 1rem;*/
+  text-align: center;
+}
+
+
+.hidden
+{
+   display: none
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+/*
+    background: rgba( 255, 255, 255, .8 )
+                url('/img/ajax-loader.gif')
+                50% 50%
+                no-repeat;
+*/
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+#loading {
+    -webkit-animation: rotation 2s infinite linear;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
